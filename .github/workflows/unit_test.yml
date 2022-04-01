@@ -1,7 +1,13 @@
 name: unit_test
 on:
   workflow_dispatch:
-  # add additional trigger
+  pull_request:
+    types:
+      - closed
+    branches: 
+    - chu-main
+    paths:
+      - .github/workflows/unit_test.yml
 
 jobs:
   unit-test:
